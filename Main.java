@@ -1,6 +1,7 @@
 package ProjetoJava;
 
 import java.util.Scanner;
+import javax.swing.*;
 
 public class Main {
 
@@ -10,27 +11,26 @@ public class Main {
 		Scanner ler = new Scanner(System.in);
 		
 		PessoaCadastro pc = new PessoaCadastro();
-		PessoaLogin pl = new PessoaLogin();
+		FeedClass fc = new FeedClass();
 		
-		System.out.println("\n BEM-VINDO AO STEAM 36!!");
+		JOptionPane.showMessageDialog(null,"\n BEM-VINDO AO STEAM 36!!");
 		
 		do {
-		System.out.print("\n ----------------------------------------");
-		System.out.print("\n Escolha a opção");
-		System.out.print("\n 1) Login");
-		System.out.print("\n 2) Cadastro");
-		System.out.print("\n 3) Informações");
-		System.out.print("\n Opção: "); op = ler.nextInt();
+		op = Integer.parseInt(JOptionPane.showInputDialog(" ----------------------------------------\n Escolha a opção\n 1) Cadastro\n 2) Login\n 3) Informações\n Opção: "));
 		
 		switch (op) {
-		case 1: pl.login(); break;
-		case 2: pc.cadastro(); break;
+		case 1: pc.cadastro(); break;
+		case 2: pc.login(); break;
 		case 3: pc.print(); break;
-		default: System.out.println("\n Opção Inválida!!"); break;
+		
+		default: JOptionPane.showMessageDialog(null,"\n Opção Inválida!!"); break;
 		}
 		
-		System.out.print("\n Digite 0 para voltar: "); op = ler.nextInt();
+		op = Integer.parseInt(JOptionPane.showInputDialog("\n Digite 0 para voltar: "));
+		
 		} while (op == 0);
 
+		fc.print();
+		
 	}
 }

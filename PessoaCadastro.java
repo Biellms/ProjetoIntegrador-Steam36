@@ -2,33 +2,48 @@ package ProjetoJava;
 
 import java.util.Scanner;
 
-public class PessoaCadastro {
+public class PessoaCadastro{
 
 	// Atributos
-	private String nome;
-	private String usuario;
-	private String senha;
-	private String email;
-	private String nascimento;
+	public String nome;
+	public String usuario;
+	public String senha;
+	public String email;
+	public String nascimento;
 	
 	Scanner ler = new Scanner(System.in);
 	
 	// Contrutor
-	public PessoaCadastro() {
-		
+	public PessoaCadastro() { // Vazio para podermos implementar no método cadastro
 	}
 	
 	// Métodos
-	public void cadastro() { 
+	public void cadastro() {	// Implementa dados do usuário
+		String a, b, c, d, e;
 		System.out.print("\n ----------------------------------------");
 		System.out.print("\n CADASTRO\n");
-		System.out.print(" Nome: "); this.nome = ler.next();
-		System.out.print(" Usuário: "); this.usuario = ler.next();
-		System.out.print(" Senha: "); this.senha = ler.next();
-		System.out.print(" Email: "); this.email = ler.next();
-		System.out.print(" Data de Nascimento: "); this.nascimento = ler.next();
+		System.out.print(" Nome: "); a = ler.next(); this.setNome(a);
+		System.out.print(" Usuário: "); b = ler.next(); this.setUsuario(b);
+		System.out.print(" Senha: "); c = ler.next(); this.setSenha(c);
+		System.out.print(" Email: "); d = ler.next(); this.setEmail(d);
+		System.out.print(" Data de Nascimento: "); e = ler.next(); this.setNascimento(e);
+		System.out.print("\n CADASTRADO COM SUCESSO!!\n\n Digite 1 para ir para o FEED DE JOGOS ou ");
 	}
 	
+	public void login() {	// Compara Strings Atributos com as String do método para validar login
+		String a, b;
+		
+		System.out.print("\n ----------------------------------------");
+		System.out.print("\n LOGIN\n");
+		System.out.print(" Usuário: "); a = ler.next();
+		System.out.print(" Senha: "); b = ler.next();
+		
+		if (a.equals(getUsuario()) && b.equals(getSenha()) ) {	// Compara Strings
+		System.out.print("\n SEJA BEM VINDO "+getNome()+"!!\n\n Digite 1 para ir para o FEED DE JOGOS ou "); }
+		
+		else { System.out.println("\n USUARIO E SENHA INCORRETOS"); this.login(); }
+	}
+		
 	public void print() {
 		System.out.print("\n ----------------------------------------");
 		System.out.print("\n Informações");
@@ -59,8 +74,6 @@ public class PessoaCadastro {
 	public String getNascimento() { return nascimento; }
 
 	public void setNascimento(String nascimento) { this.nascimento = nascimento; }
-	
-	
-	
+
 	
 }
