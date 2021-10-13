@@ -2,6 +2,8 @@ package ProjetoJava;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class PessoaCadastro{
 
 	// Atributos
@@ -18,40 +20,41 @@ public class PessoaCadastro{
 	}
 	
 	// Métodos
-	public void cadastro() {	// Implementa dados do usuário
+	public void cadastro() {	// Implementa dados aos Atributos da PessoaCadastro
 		String a, b, c, d, e;
-		System.out.print("\n ----------------------------------------");
-		System.out.print("\n CADASTRO\n");
-		System.out.print(" Nome: "); a = ler.next(); this.setNome(a);
-		System.out.print(" Usuário: "); b = ler.next(); this.setUsuario(b);
-		System.out.print(" Senha: "); c = ler.next(); this.setSenha(c);
-		System.out.print(" Email: "); d = ler.next(); this.setEmail(d);
-		System.out.print(" Data de Nascimento: "); e = ler.next(); this.setNascimento(e);
-		System.out.print("\n CADASTRADO COM SUCESSO!!\n\n Digite 1 para ir para o FEED DE JOGOS ou ");
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n               "
+				+ "CADASTRO\n ----------------------------------------");
+		a = JOptionPane.showInputDialog(" Nome: "); this.setNome(a);
+		b = JOptionPane.showInputDialog(" Usuário: "); this.setUsuario(b);
+		c = JOptionPane.showInputDialog(" Senha: "); this.setSenha(c);
+		d = JOptionPane.showInputDialog(" Email: "); this.setEmail(d);
+		e = JOptionPane.showInputDialog(" Data de Nascimento: "); this.setNascimento(e);
+		JOptionPane.showMessageDialog(null,"\n CADASTRADO COM SUCESSO!!");
 	}
 	
 	public void login() {	// Compara Strings Atributos com as String do método para validar login
 		String a, b;
 		
-		System.out.print("\n ----------------------------------------");
-		System.out.print("\n LOGIN\n");
-		System.out.print(" Usuário: "); a = ler.next();
-		System.out.print(" Senha: "); b = ler.next();
+		
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n                   "
+				+ "LOGIN\n ----------------------------------------");
+		a = JOptionPane.showInputDialog(" Usuário: ");
+		b = JOptionPane.showInputDialog(" Senha: ");
 		
 		if (a.equals(getUsuario()) && b.equals(getSenha()) ) {	// Compara Strings
-		System.out.print("\n SEJA BEM VINDO "+getNome()+"!!\n\n Digite 1 para ir para o FEED DE JOGOS ou "); }
+		JOptionPane.showMessageDialog(null,"\n SEJA BEM VINDO "+getNome()+"!!"); }
 		
-		else { System.out.println("\n USUARIO E SENHA INCORRETOS"); this.login(); }
+		else { JOptionPane.showMessageDialog(null,"\n USUARIO E SENHA INCORRETOS"); this.login(); }
 	}
 		
 	public void print() {
-		System.out.print("\n ----------------------------------------");
-		System.out.print("\n Informações");
-		System.out.print("\n Nome: "+nome);
-		System.out.print("\n Usuário: "+usuario);
-		System.out.print("\n Senha: "+senha);
-		System.out.print("\n Email: "+email);
-		System.out.print("\n Data de Nascimento: "+nascimento);
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n              "
+				+ "INFORMAÇÕES\n ---------------------------------------- "
+				+ "\n Nome: "+getNome()+""
+						+ "\n Usuário: "+getUsuario()+""
+								+ "\n Senha: "+getSenha()+""
+										+ "\n Email: "+getEmail()+""
+												+ "\n Data de Nascimento: "+getNascimento());
 	}
 	
 	// Get e Set
