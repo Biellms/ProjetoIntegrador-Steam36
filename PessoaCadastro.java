@@ -1,8 +1,7 @@
 package ProjetoJava;
 
 import java.util.Scanner;
-
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class PessoaCadastro{
 
@@ -22,7 +21,7 @@ public class PessoaCadastro{
 	// Métodos
 	public void cadastro() {	// Implementa dados aos Atributos da PessoaCadastro
 		String a, b, c, d, e;
-		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n               "
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n           "
 				+ "CADASTRO\n ----------------------------------------");
 		a = JOptionPane.showInputDialog(" Nome: "); this.setNome(a);
 		b = JOptionPane.showInputDialog(" Usuário: "); this.setUsuario(b);
@@ -35,8 +34,7 @@ public class PessoaCadastro{
 	public void login() {	// Compara Strings Atributos com as String do método para validar login
 		String a, b;
 		
-		
-		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n                   "
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n              "
 				+ "LOGIN\n ----------------------------------------");
 		a = JOptionPane.showInputDialog(" Usuário: ");
 		b = JOptionPane.showInputDialog(" Senha: ");
@@ -48,13 +46,13 @@ public class PessoaCadastro{
 	}
 		
 	public void print() {
-		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n              "
+		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n          "
 				+ "INFORMAÇÕES\n ---------------------------------------- "
 				+ "\n Nome: "+getNome()+""
 						+ "\n Usuário: "+getUsuario()+""
 								+ "\n Senha: "+getSenha()+""
 										+ "\n Email: "+getEmail()+""
-												+ "\n Data de Nascimento: "+getNascimento());
+												+ "\n Data de Nascimento: "+getNascimento()+"\n\n");
 	}
 	
 	// Get e Set
