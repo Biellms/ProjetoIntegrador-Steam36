@@ -1,8 +1,8 @@
 package steam36;
 
-import java.awt.Font;
-import java.net.URL;
-import java.util.Scanner;
+import java.awt.*;
+import java.net.*;
+import java.util.*;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 
@@ -11,25 +11,32 @@ public class Main {
 	@SuppressWarnings("static-access")	// 
 	static void Menu () {
 		
-		int op;
+		int op = 0;
 		
 		// Menu de Opções
+		// Exception para aceitar apenas Números
+		try {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n "
 					+ "Escolha a opção\n ----------------------------------------\n "
-					+ "1) Login\n 2) Cadastro\n 3) Informações\n 4) Feed de Jogos\n\n Opção: "));
+					+ "1) Login\n 2) Cadastro\n 3) Feed de Jogos\n 4) Sair\n\n Opção: "));
 			
+		} catch (NumberFormatException e) { // Verifica se o dado de entrada é um numero inteiro 
+			
+			JOptionPane.showMessageDialog(null, "\n Exception: "+e+"\n"
+					+ "\n Você deve entrar com um número INTEIRO!"
+					+ "\n Por favor tente novamente!");
+			Main.Menu();
+			}
+
 			switch (op) {
 			case 1: PessoaCadastro.login(); break;
-			case 2: PessoaCadastro.cadastro(); break;
-			case 3: PessoaCadastro.print(); break;
-			case 4: FeedClass.FeedClass1(); break;
+			case 2: PessoaCadastro.cadastro();break;
+			case 3: FeedClass.FeedClass1(); break;
+			case 4: System.exit(0); break;
 			
 			default: JOptionPane.showMessageDialog(null,"\n Opção Inválida!!"); Main.Menu(); break;
 			}
 			
-			// Loop para manter o usuário no menu
-			op = Integer.parseInt(JOptionPane.showInputDialog("\n 1) FEED DE JOGOS\n 0) VOLTAR\n\n Opção:"));
-			if (op == 1) { FeedClass.FeedClass1(); } else { Main.Menu(); }
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -46,6 +53,6 @@ public class Main {
 				+ "----------------------------------------");
 		
 		Main.Menu();
-		
 	}
+	
 }

@@ -11,6 +11,7 @@ public class PagamentoClass {
 	public static String nCartao;
 	public static String nValidade;
 	public static String nSegCod;
+	public static int cont = 0;
 	
 	// Construtor
 	public PagamentoClass() {
@@ -27,6 +28,7 @@ public class PagamentoClass {
 		c = JOptionPane.showInputDialog(" Numero do Cartão: "); PagamentoClass.setnCartao(c);
 		d = JOptionPane.showInputDialog(" Validade do Cartão: "); PagamentoClass.setnValidade(d);
 		e = JOptionPane.showInputDialog(" Código de Segurança: "); PagamentoClass.setnSegCod(e);
+		cont++;
 		JOptionPane.showMessageDialog(null,"\n CADASTRADO COM SUCESSO!!"); 
 		PagamentoClass.confirmar();
 	}
@@ -47,7 +49,7 @@ public class PagamentoClass {
 		
 		op = Integer.parseInt(JOptionPane.showInputDialog("\n Valor total: "+FeedClass.formatarMoeda()+"\n"
 				+ "\n Deseja Confirmar a compra?"
-				+ "\n 1) Sim\n 2) Voltar"));
+				+ "\n 1) Sim\n 2) Voltar\n\n Opção:"));
 		
 		if (op == 1) { JOptionPane.showMessageDialog(null,"\n COMPRA REALIZADA COM SUCESSO!!\n"
 				+ " A NOTA FISCAL FOI ENVIADA PARA O EMAIL CADASTRADO!!\n\n"
@@ -76,4 +78,9 @@ public class PagamentoClass {
 	public static String getnSegCod() { return nSegCod; }
 
 	public static void setnSegCod(String nSegCod) { PagamentoClass.nSegCod = nSegCod; }
+
+	public static int getCont() { return cont; }
+
+	public static void setCont(int cont) { PagamentoClass.cont = cont; }
+
 }

@@ -8,6 +8,7 @@ public class FeedClass {
 
 	// Atributos
 	public static int valor = 0;	// Atributo Static para manipular em outra Classe
+	// public static double valorCarrinho = 0;
 	
 	// Array para fazer o armazenamento dos dados de jogos adicionados no carrinho
 	static Carrinho catCarrinho = new Carrinho();	
@@ -21,8 +22,12 @@ public class FeedClass {
 
 	// Métodos
 	static void Feed() {	// Menu de Opções de Categorias
-		int op;
 		
+		int op = 0;
+		
+		// Menu de Opções
+		// Exception para aceitar apenas Números
+		try {
 		op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n "
 				+ "           CATEGORIAS\n"
 				+ " ----------------------------------------\n\n"
@@ -31,19 +36,28 @@ public class FeedClass {
 				+ " 3) RPG\n"
 				+ " 4) Esporte\n"
 				+ " ----------------------------------------\n"
-				+ " 5) Carrinho\n"
-				+ " 6) Home\n"
+				+ " 5) Informações do Usuário\n"
+				+ " 6) Carrinho\n"
+				+ " 7) Home\n"
 				+ "\n Opção:"));
-
+		} catch (NumberFormatException e) { // Verifica se o dado de entrada é um numero inteiro
+			
+			JOptionPane.showMessageDialog(null, "\n Exception: "+e+"\n"
+					+ "\n Você deve entrar com um número INTEIRO!"
+					+ "\n Por favor tente novamente!");
+			FeedClass.Feed();
+		}
+		
 		switch (op)  {
 		
 		case 1: FeedClass.AventuraAção(); break;
 		case 2: FeedClass.Luta(); break;
 		case 3: FeedClass.RPG(); break;
 		case 4: FeedClass.Esporte(); break;
-		case 5: FeedClass.Carrinho(); break;
-		case 6: Main.Menu(); break;
-		default: JOptionPane.showMessageDialog(null, "\n OPÇÃO INVÁLIDA!!"); FeedClass.FeedClass1(); break;
+		case 5: PessoaCadastro.print(); break;
+		case 6: FeedClass.Carrinho(); break;
+		case 7: Main.Menu(); break;
+		default: JOptionPane.showMessageDialog(null, "\n OPÇÃO INVÁLIDA!!"); FeedClass.Feed(); break;
 		}
 	}
 	
@@ -98,7 +112,7 @@ public class FeedClass {
 			default: System.out.print("\n OPÇÃO INVÁLIDA!!"); break;
 			}
 			
-			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Exibir Carrinho\n\n Opção: "));
+			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Menu de compras\n\n Opção: "));
 			if (op == 1) { FeedClass.Feed(); } else { FeedClass.Carrinho(); }
 	
 	}
@@ -111,14 +125,13 @@ public class FeedClass {
 
 			String textoJogos = "";
 			for(int i=0;i<jogosLuta.size();i++) {
-				textoJogos += (i + 1) + ") " +jogosLuta.get(i).getNomeJogo() +"\n Preço: "+jogosLuta.get(i).getPrecoUni()+"\n\n";
+				textoJogos += (i + 1) + ") " +jogosLuta.get(i).getNomeJogo() +"\n Preço: "+jogosLuta.get(i).formatarMoeda()+"\n\n";
 			}
 			
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n"
 					+ "\tJOGOS DISPONÍVEIS\n----------------------------------------\n"
 					+ textoJogos));
 				
-					
 			switch (op)  {
 
 			case 1: JOptionPane.showMessageDialog(null,"\n Jogo Adicionado ao Carrinho!!\n\n "+jogosLuta.get(0).getNomeJogo()+"\n Preço: "+jogosLuta.get(0).formatarMoeda());
@@ -140,7 +153,7 @@ public class FeedClass {
 			default: System.out.print("\n OPÇÃO INVÁLIDA!!"); break;
 			}
 			
-			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Exibir Carrinho\n\n Opção: "));
+			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Menu de compras\n\n Opção: "));
 			if (op == 1) { FeedClass.Feed(); } else { FeedClass.Carrinho(); }
 	
 	}
@@ -152,7 +165,7 @@ public class FeedClass {
 
 			String textoJogos = "";
 			for(int i=0;i<jogosRPG.size();i++) {
-				textoJogos += (i + 1) + ") " +jogosRPG.get(i).getNomeJogo() +"\n Preço: "+jogosRPG.get(i).getPrecoUni()+"\n\n";
+				textoJogos += (i + 1) + ") " +jogosRPG.get(i).getNomeJogo() +"\n Preço: "+jogosRPG.get(i).formatarMoeda()+"\n\n";
 			}
 			
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n"
@@ -180,7 +193,7 @@ public class FeedClass {
 			default: System.out.print("\n OPÇÃO INVÁLIDA!!"); break;
 			}
 			
-			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Exibir Carrinho\n\n Opção: "));
+			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Menu de compras\n\n Opção: "));
 			if (op == 1) { FeedClass.Feed(); } else { FeedClass.Carrinho(); }
 			
 	}
@@ -193,7 +206,7 @@ public class FeedClass {
 
 			String textoJogos = "";
 			for(int i=0;i<jogosEsporte.size();i++) {
-				textoJogos += (i + 1) + ") " +jogosEsporte.get(i).getNomeJogo() +"\n Preço: "+jogosEsporte.get(i).getPrecoUni()+"\n\n";
+				textoJogos += (i + 1) + ") " +jogosEsporte.get(i).getNomeJogo() +"\n Preço: "+jogosEsporte.get(i).formatarMoeda()+"\n\n";
 			}
 			
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n"
@@ -222,15 +235,17 @@ public class FeedClass {
 			default: System.out.print("\n OPÇÃO INVÁLIDA!!"); break;
 			}
 			
-			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Exibir Carrinho\n\n Opção: "));
+			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Menu de compras\n\n Opção: "));
 			if (op == 1) { FeedClass.Feed(); } else { FeedClass.Carrinho(); }
 	}
 	
 	static void Carrinho() {	// Menu onde mostrará os Métodos de forma de pagamento e Carrinho
-		int op;
 		
+		int op = 0;
+		
+		try {
 		op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n"
-				+ " CARRINHO"
+				+ " MENU DE COMPRAS"
 				+ "\n ----------------------------------------"
 				+ "\n VALOR TOTAL: "+FeedClass.formatarMoeda()+"\n"
 				+ "\n 1) Adicionar Forma de pagamento"
@@ -238,10 +253,20 @@ public class FeedClass {
 				+ "\n 3) Exibir Carrinho"
 				+ "\n 4) Voltar"
 				+ "\n\n Opção: "));
-
+		} catch (NumberFormatException e) { // Verifica se o dado de entrada é um numero inteiro
+			
+			JOptionPane.showMessageDialog(null, "\n Exception: "+e+"\n"
+					+ "\n Você deve entrar com um número INTEIRO!"
+					+ "\n Por favor tente novamente!");
+			FeedClass.Carrinho();
+		}
+		
 		switch (op) {
 		
-		case 1: PagamentoClass.cartao(); break;
+		case 1: // Condição para adicionar FORMA DE PAGAMENTO, Estar cadastrado.
+			if (PessoaCadastro.cont >= 1) {PagamentoClass.cartao(); }
+			else { JOptionPane.showMessageDialog(null, "\n VOCÊ DEVE ESTAR CADASTRADO PARA REALIZAR A COMPRA!!"); Main.Menu(); } 
+		break;
 		case 2: PagamentoClass.print(); break;
 		case 3: FeedClass.exibirCarrinho(); break;
 		case 4: FeedClass.Feed(); break;
@@ -251,6 +276,7 @@ public class FeedClass {
 	}
 
 	static void exibirCarrinho() {
+		int op;
 		
 		// Método para Exibir os jogos que foram escolhidos
 		String textoJogos = "";
@@ -258,13 +284,48 @@ public class FeedClass {
 			textoJogos += (i + 1) + ") " +jogosCarrinho.get(i).getNomeJogo() +"\n Preço: "+jogosCarrinho.get(i).formatarMoeda()+"\n\n";
 		}
 		
-		JOptionPane.showMessageDialog(null,"\n----------------------------------------\n"
+		op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 				+ "      ITEMS CARRINHO\n----------------------------------------\n"
-				+ textoJogos+"\n Valor total: "+FeedClass.formatarMoeda());
+				+ textoJogos+"----------------------------------------\n Valor total: "+FeedClass.formatarMoeda()+""
+						+ "\n----------------------------------------\n"
+						+ "\n 1) Realizar Compra"
+						+ "\n 2) Remover Item"
+						+ "\n 3) Voltar\n"
+						+ "\n Opção:"));
 		
-		FeedClass.Carrinho();
+		// Condição para realizar COMPRA, ter cartão cadastrado.
+		if (op == 1 && PagamentoClass.cont >= 1) { PagamentoClass.confirmar(); } 
+		if (op == 1 && PagamentoClass.cont < 1) { JOptionPane.showMessageDialog(null, "\n VOCÊ DEVE CADASTRAR UM CARTÃO PARA REALIZAR A COMPRA!!"); FeedClass.Carrinho(); }
+		//if (op == 2) { FeedClass.removerItem(); }
+		else { FeedClass.Carrinho(); }
 		
 	}
+	
+	/*@SuppressWarnings("unlikely-arg-type")
+	static void removerItem() {
+		int op;
+		
+		String textoJogos = "";
+		for(int i=0;i<jogosCarrinho.size();i++) {
+			textoJogos += (i + 1) + ") " +jogosCarrinho.get(i).getNomeJogo() +"\n Preço: "+jogosCarrinho.get(i).formatarMoeda()+"\n\n";
+		}
+		
+		op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
+				+ "      ITEMS CARRINHO\n----------------------------------------\n"
+				+ textoJogos+"----------------------------------------\n Valor total: "+FeedClass.formatarMoeda()+""
+						+ "\n----------------------------------------\n"
+						+ "\n Qual item deseja REMOVER?"
+						+ "\n\n Opção:"));
+		
+		if (jogosCarrinho.get(op).equals(jogosCarrinho)) { 
+			jogosCarrinho.remove(op); 
+			valor -= jogosCarrinho.get(op).getPrecoUni();
+		}	// Remove produto da Array se houver.
+		else { JOptionPane.showMessageDialog(null,"\n Este jogo não existe no carrinho!"); }
+		
+		FeedClass.exibirCarrinho();
+		
+	}*/
 	
 	static String formatarMoeda() {	// Formatar Preço para R$ 0.000,00
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
@@ -278,4 +339,8 @@ public class FeedClass {
 
 	public static void setValor(int valor) { FeedClass.valor = valor; }
 
+	// public static double getValorCarrinho() { return valorCarrinho; }
+
+	// public static void setValorCarrinho(double valorCarrinho) { FeedClass.valorCarrinho = valorCarrinho; }
+	
 }

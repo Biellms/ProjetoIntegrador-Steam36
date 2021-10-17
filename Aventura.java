@@ -6,11 +6,11 @@ public class Aventura {
 	
 	private ArrayList <Game> lista = new ArrayList <>();
 	
-	public Aventura () {	
+	public Aventura () {
+		this.lista.add(new Game("God Of War",1 , 79.99));
+		this.lista.add(new Game("The Last Of Us (Part II)",1 , 99.99));
 		this.lista.add(new Game("Ori and the Blind Forest", 1, 59.00));
-		this.lista.add(new Game("Crash Bandicoot",1 , 149.90));
-		this.lista.add(new Game("Spyro",1 , 149.90));
-		this.lista.add(new Game("Hollow Knight",1 , 27.99));
+		this.lista.add(new Game("Crash Bandicoot N.Sane Trilogy",1 , 79.90));
 	}
 
 	public ArrayList<Game> getLista() {

@@ -12,6 +12,7 @@ public class PessoaCadastro{
 	public static String senha;
 	public static String email;
 	public static String nascimento;
+	public static int cont = 0;
 	
 	Scanner ler = new Scanner(System.in);
 	
@@ -29,11 +30,15 @@ public class PessoaCadastro{
 		c = JOptionPane.showInputDialog(" Senha: "); PessoaCadastro.setSenha(c);
 		d = JOptionPane.showInputDialog(" Email: "); PessoaCadastro.setEmail(d);
 		e = JOptionPane.showInputDialog(" Data de Nascimento: "); PessoaCadastro.setNascimento(e);
-		JOptionPane.showMessageDialog(null,"\n CADASTRADO COM SUCESSO!!");
+		cont++;
+		JOptionPane.showMessageDialog(null,"\n CADASTRADO COM SUCESSO!!"
+										 + "\n\n SEJA BEM VINDO "+getNome()+"!!\n");
+		FeedClass.FeedClass1();
 	}
 	
 	static void login() {	// Compara Strings Atributos com as String do método para validar login
 		String a, b;
+		int op;
 		
 		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n              "
 				+ "LOGIN\n ----------------------------------------");
@@ -41,9 +46,16 @@ public class PessoaCadastro{
 		b = JOptionPane.showInputDialog(" Senha: ");
 		
 		if (a.equals(getUsuario()) && b.equals(getSenha()) ) {	// Compara Strings
-		JOptionPane.showMessageDialog(null,"\n SEJA BEM VINDO "+getNome()+"!!"); }
+		JOptionPane.showMessageDialog(null,"\n SEJA BEM VINDO "+getNome()+"!!"); 
+		FeedClass.FeedClass1(); }
 		
-		else { JOptionPane.showMessageDialog(null,"\n USUARIO E SENHA INCORRETOS"); PessoaCadastro.login(); }
+		// Retornar ou continuar tentando
+		else { op = Integer.parseInt(JOptionPane.showInputDialog("\n USUARIO E SENHA INCORRETOS!!\n"
+					+ "\n 1) Tentar novamente"
+					+ "\n 2) Voltar"
+					+ "\n\n Opção")); 
+		if (op == 1) { PessoaCadastro.login(); } else { Main.Menu(); }
+		}
 	}
 		
 	static void print() {
@@ -54,6 +66,7 @@ public class PessoaCadastro{
 								+ "\n Senha: "+getSenha()+""
 										+ "\n Email: "+getEmail()+""
 												+ "\n Data de Nascimento: "+getNascimento()+"\n\n");
+		FeedClass.Feed();
 	}
 	
 	// Get e Set
