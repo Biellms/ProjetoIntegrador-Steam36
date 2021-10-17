@@ -1,16 +1,17 @@
-package ProjetoJava;
+package steam36;
 
-import java.util.Scanner;
+import java.util.*;
 import javax.swing.*;
 
 public class PessoaCadastro{
 
-	// Atributos
-	public String nome;
-	public String usuario;
-	public String senha;
-	public String email;
-	public String nascimento;
+	/* Atributos Static para não precisar criar um Objeto, e não 
+	acabar perdendo o valor ao voltar em algum método*/
+	public static String nome;	
+	public static String usuario;
+	public static String senha;
+	public static String email;
+	public static String nascimento;
 	
 	Scanner ler = new Scanner(System.in);
 	
@@ -19,19 +20,19 @@ public class PessoaCadastro{
 	}
 	
 	// Métodos
-	public void cadastro() {	// Implementa dados aos Atributos da PessoaCadastro
+	static void cadastro() {	// Implementa dados aos Atributos da PessoaCadastro
 		String a, b, c, d, e;
 		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n           "
 				+ "CADASTRO\n ----------------------------------------");
-		a = JOptionPane.showInputDialog(" Nome: "); this.setNome(a);
-		b = JOptionPane.showInputDialog(" Usuário: "); this.setUsuario(b);
-		c = JOptionPane.showInputDialog(" Senha: "); this.setSenha(c);
-		d = JOptionPane.showInputDialog(" Email: "); this.setEmail(d);
-		e = JOptionPane.showInputDialog(" Data de Nascimento: "); this.setNascimento(e);
+		a = JOptionPane.showInputDialog(" Nome: "); PessoaCadastro.setNome(a);
+		b = JOptionPane.showInputDialog(" Usuário: "); PessoaCadastro.setUsuario(b);
+		c = JOptionPane.showInputDialog(" Senha: "); PessoaCadastro.setSenha(c);
+		d = JOptionPane.showInputDialog(" Email: "); PessoaCadastro.setEmail(d);
+		e = JOptionPane.showInputDialog(" Data de Nascimento: "); PessoaCadastro.setNascimento(e);
 		JOptionPane.showMessageDialog(null,"\n CADASTRADO COM SUCESSO!!");
 	}
 	
-	public void login() {	// Compara Strings Atributos com as String do método para validar login
+	static void login() {	// Compara Strings Atributos com as String do método para validar login
 		String a, b;
 		
 		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n              "
@@ -42,10 +43,10 @@ public class PessoaCadastro{
 		if (a.equals(getUsuario()) && b.equals(getSenha()) ) {	// Compara Strings
 		JOptionPane.showMessageDialog(null,"\n SEJA BEM VINDO "+getNome()+"!!"); }
 		
-		else { JOptionPane.showMessageDialog(null,"\n USUARIO E SENHA INCORRETOS"); this.login(); }
+		else { JOptionPane.showMessageDialog(null,"\n USUARIO E SENHA INCORRETOS"); PessoaCadastro.login(); }
 	}
 		
-	public void print() {
+	static void print() {
 		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n          "
 				+ "INFORMAÇÕES\n ---------------------------------------- "
 				+ "\n Nome: "+getNome()+""
@@ -56,25 +57,25 @@ public class PessoaCadastro{
 	}
 	
 	// Get e Set
-	public String getNome() { return nome; }
+	public static String getNome() { return nome; }
 
-	public void setNome(String nome) { this.nome = nome; }
+	public static void setNome(String nome) { PessoaCadastro.nome = nome; }
 
-	public String getUsuario() { return usuario; }
+	public static String getUsuario() { return usuario; }
 
-	public void setUsuario(String usuario) { this.usuario = usuario; }
+	public static void setUsuario(String usuario) { PessoaCadastro.usuario = usuario; }
 
-	public String getSenha() { return senha; }
+	public static String getSenha() { return senha; }
 
-	public void setSenha(String senha) { this.senha = senha; }
+	public static void setSenha(String senha) { PessoaCadastro.senha = senha; }
 
-	public String getEmail() { return email; }
+	public static String getEmail() { return email; }
 
-	public void setEmail(String email) { this.email = email; }
+	public static void setEmail(String email) { PessoaCadastro.email = email; }
 
-	public String getNascimento() { return nascimento; }
+	public static String getNascimento() { return nascimento; }
 
-	public void setNascimento(String nascimento) { this.nascimento = nascimento; }
+	public static void setNascimento(String nascimento) { PessoaCadastro.nascimento = nascimento; }
 
 	
 }
