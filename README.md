@@ -7,7 +7,7 @@
 
 <hr>
 
-### Projeto feito com a linguagem de programação JAVA, proposto pela Generation Brasil. Com o objetivo de simular uma plataforma online de venda de jogos. Sendo o publico alvo qualquer pessoa interessada em jogos de qualquer plataforma (PC, Playstation, Xbox).
+#### Projeto feito com a linguagem de programação JAVA, proposto pela Generation Brasil. Com o objetivo de simular uma plataforma online de venda de jogos. Sendo o publico alvo qualquer pessoa interessada em jogos de qualquer plataforma (PC, Playstation, Xbox).
 
 </br>
 
