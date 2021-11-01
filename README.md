@@ -6,7 +6,6 @@
   </div>
 
 <hr>
-</br>
 
 ### Projeto feito com a linguagem de programação JAVA, proposto pela Generation Brasil. Com o objetivo de simular uma plataforma online de venda de jogos. Sendo o publico alvo qualquer pessoa interessada em jogos de qualquer plataforma (PC, Playstation, Xbox).
 
@@ -26,8 +25,6 @@
 * Feed de Jogos
 * Carrinho de Compras
 * Método de Pagamento
-
-</br>
 
 ### **Linguagens e Ferramentas** 🛠
 * Java
