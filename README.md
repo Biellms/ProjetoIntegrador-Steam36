@@ -2,14 +2,13 @@
   <img width="750px" src="https://i.imgur.com/ho6bdTa.jpg" title="source: imgur.com"/>
   <hr>
   <h3>
-  <p><b>Projeto JAVA - STEAM 36</b></p>
-  </div>
-
+  <b>Projeto JAVA - STEAM 36</b></br></div>
+  <div align = "center">
+  <p>Projeto feito com a linguagem de programação JAVA, proposto pela Generation Brasil. Com o objetivo de simular uma plataforma online de venda de jogos. Sendo o publico alvo qualquer pessoa interessada em jogos de qualquer plataforma (PC, Playstation, Xbox).
+  </p>
+  </div>  
+  
 <hr>
-
-#### Projeto feito com a linguagem de programação JAVA, proposto pela Generation Brasil. Com o objetivo de simular uma plataforma online de venda de jogos. Sendo o publico alvo qualquer pessoa interessada em jogos de qualquer plataforma (PC, Playstation, Xbox).
-
-</br>
 
 <div align = "center">
   <p><b><h3>Fluxograma</b>
@@ -25,6 +24,8 @@
 * Feed de Jogos
 * Carrinho de Compras
 * Método de Pagamento
+
+<hr>
 
 ### **Linguagens e Ferramentas** 🛠
 * Java
