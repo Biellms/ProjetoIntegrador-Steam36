@@ -1,5 +1,3 @@
-package steam36;
-
 import java.text.NumberFormat;
 
 public class Game {
@@ -17,7 +15,7 @@ public class Game {
 		this.precoUni = precoUni;
 	}
 	
-	public String formatarMoeda() {	// Formatar Preço para R$ 0.000,00
+	public String formatarMoeda() {	// Formatar Preï¿½o para R$ 0.000,00
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
 		nf.setMinimumFractionDigits(2);
 		String formatoMoeda = nf.format(precoUni);

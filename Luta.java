@@ -1,5 +1,3 @@
-package steam36;
-
 import java.util.ArrayList;
 
 public class Luta {

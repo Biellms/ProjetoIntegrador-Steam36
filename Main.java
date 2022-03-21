@@ -1,29 +1,25 @@
-package steam36;
-
 import java.awt.*;
 import java.net.*;
-import java.util.*;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 
 public class Main {
 	
-	@SuppressWarnings("static-access")	// 
 	static void Menu () {
 		
 		int op = 0;
 		
-		// Menu de Opções
-		// Exception para aceitar apenas Números
+		// Menu de opÃ§Ãµes
+		// Exception para aceitar apenas NÃºmeros
 		try {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n "
-					+ "Escolha a opção\n ----------------------------------------\n "
-					+ "1) Login\n 2) Cadastro\n 3) Feed de Jogos\n 4) Sair\n\n Opção: "));
+					+ "Escolha a opcao\n ----------------------------------------\n "
+					+ "1) Login\n 2) Cadastro\n 3) Feed de Jogos\n 4) Sair\n\n OpÃ§Ã£o: "));
 			
-		} catch (NumberFormatException e) { // Verifica se o dado de entrada é um numero inteiro 
+		} catch (NumberFormatException e) { // Verifica se o dado de entrada ï¿½ um numero inteiro 
 			
 			JOptionPane.showMessageDialog(null, "\n Exception: "+e+"\n"
-					+ "\n Você deve entrar com um número INTEIRO!"
+					+ "\n VocÃª deve entrar com um nÃºmero INTEIRO!"
 					+ "\n Por favor tente novamente!");
 			Main.Menu();
 			}
@@ -34,7 +30,7 @@ public class Main {
 			case 3: FeedClass.FeedClass1(); break;
 			case 4: System.exit(0); break;
 			
-			default: JOptionPane.showMessageDialog(null,"\n Opção Inválida!!"); Main.Menu(); break;
+			default: JOptionPane.showMessageDialog(null,"\n Opcao InvÃ¡lida!!"); Main.Menu(); break;
 			}
 			
 	}
@@ -45,7 +41,7 @@ public class Main {
 		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Arial", Font.BOLD, 14)));
 		
 		// Gif no JOptionPane
-		final ImageIcon icon = new ImageIcon(new URL("https://bityli.com/gLdSwA"));
+		final ImageIcon icon = new ImageIcon(new URL("https://i.imgur.com/5tyVfiF.gif"));
 		
 		JOptionPane.showMessageDialog(null,null,null, JOptionPane.INFORMATION_MESSAGE, icon);
 		JOptionPane.showMessageDialog(null,"\n ----------------------------------------\n "
