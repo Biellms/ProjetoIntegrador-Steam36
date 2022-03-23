@@ -13,7 +13,7 @@ public class Main {
 		// Exception para aceitar apenas Números
 		try {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n "
-					+ "Escolha a opcao\n ----------------------------------------\n "
+					+ "ESCOLHA A OPÇÃO\n ----------------------------------------\n "
 					+ "1) Login\n 2) Cadastro\n 3) Feed de Jogos\n 4) Sair\n\n Opção: "));
 			
 		} catch (NumberFormatException e) { // Verifica se o dado de entrada � um numero inteiro 
