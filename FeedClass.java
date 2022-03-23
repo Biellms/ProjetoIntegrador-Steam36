@@ -86,7 +86,9 @@ public class FeedClass {
 			
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 					+ "       JOGOS DISPONÍVEIS\n----------------------------------------\n"
-					+ textoJogos));
+					+ textoJogos
+					+ "5) Voltar\n\n"
+					+ "Opção:"));
 				
 			switch (op) {
 
@@ -106,7 +108,9 @@ public class FeedClass {
 			jogosCarrinho.add(jogosAventura.get(3));
 			valor += jogosAventura.get(3).getPrecoUni();
 			break;
-			default: System.out.print("\n Opção Inválida!!"); break;
+			case 5: FeedClass.Feed();
+			break;
+			default: JOptionPane.showMessageDialog(null, "Opção Inválida!!"); FeedClass.AventuraAcao();
 			}
 			
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n\n Deseja continuar comprando?\n 1) Sim\n 2) Menu de compras\n\n Opção: "));

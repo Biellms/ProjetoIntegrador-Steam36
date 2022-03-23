@@ -15,7 +15,7 @@ public class PessoaCadastro{
 	Scanner ler = new Scanner(System.in);
 	
 	// Contrutor
-	public PessoaCadastro() { // Vazio para podermos implementar no m�todo cadastro
+	public PessoaCadastro() { // Vazio para podermos implementar no método cadastro
 	}
 	
 	// Métodos
@@ -34,7 +34,7 @@ public class PessoaCadastro{
 		FeedClass.FeedClass1();
 	}
 	
-	static void login() {	// Compara Strings Atributos com as String do m�todo para validar login
+	static void login() {	// Compara Strings Atributos com as String do método para validar login
 		String a, b;
 		int op;
 		

@@ -55,7 +55,6 @@ public class PagamentoClass {
 		else { FeedClass.Carrinho(); }
 	}
 	
-	
 	// Get e Set
 	public static String getNomeTitutar() { return nomeTitutar; }
 
