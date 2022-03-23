@@ -40,7 +40,7 @@ public class FeedClass {
 		} catch (NumberFormatException e) { // Verifica se o dado de entrada é um numero inteiro
 			
 			JOptionPane.showMessageDialog(null, "\n Exception: "+e+"\n"
-					+ "\n Voc� deve entrar com um número INTEIRO!"
+					+ "\n Você deve entrar com um número INTEIRO!"
 					+ "\n Por favor tente novamente!");
 			FeedClass.Feed();
 		}
@@ -87,6 +87,7 @@ public class FeedClass {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 					+ "       JOGOS DISPONÍVEIS\n----------------------------------------\n"
 					+ textoJogos
+					+ "----------------------------------------\n"
 					+ "5) Voltar\n\n"
 					+ "Opção:"));
 				
@@ -132,6 +133,7 @@ public class FeedClass {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 					+ "       JOGOS DISPONÍVEIS\n----------------------------------------\n"
 					+ textoJogos
+					+ "----------------------------------------\n"
 					+ "5) Voltar\n\n"
 					+ "Opção:"));
 				
@@ -176,6 +178,7 @@ public class FeedClass {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 					+ "       JOGOS DISPONÍVEIS\n----------------------------------------\n"
 					+ textoJogos
+					+ "----------------------------------------\n"
 					+ "5) Voltar\n\n"
 					+ "Opção:"));
 				
@@ -221,6 +224,7 @@ public class FeedClass {
 			op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
 					+ "       JOGOS DISPONÍVEIS\n----------------------------------------\n"
 					+ textoJogos
+					+ "----------------------------------------\n"
 					+ "5) Voltar\n\n"
 					+ "Opção:"));
 				
@@ -264,6 +268,7 @@ public class FeedClass {
 				+ "\n 1) Adicionar Forma de pagamento"
 				+ "\n 2) Exibir Forma de pagamento cadastrado"
 				+ "\n 3) Exibir Carrinho"
+				+ "\n ----------------------------------------"
 				+ "\n 4) Voltar"
 				+ "\n\n Opção: "));
 		} catch (NumberFormatException e) { // Verifica se o dado de entrada � um numero inteiro
@@ -297,12 +302,13 @@ public class FeedClass {
 			textoJogos += (i + 1) + ") " +jogosCarrinho.get(i).getNomeJogo() +"\n Preço: "+jogosCarrinho.get(i).formatarMoeda()+"\n";
 		}
 		
-		op = Integer.parseInt(JOptionPane.showInputDialog("\n----------------------------------------\n"
-				+ "      ITENS CARRINHO\n----------------------------------------\n"
+		op = Integer.parseInt(JOptionPane.showInputDialog("\n ----------------------------------------\n"
+				+ "       ITENS CARRINHO\n ----------------------------------------\n"
 				+ textoJogos+"\n Valor total: "+FeedClass.formatarMoeda()+""
-						+ "\n----------------------------------------\n"
+						+ "\n ----------------------------------------\n"
 						+ "\n 1) Realizar Compra"
 						+ "\n 2) Remover Item"
+						+ "\n ----------------------------------------"
 						+ "\n 3) Voltar\n"
 						+ "\n Opção:"));
 		
