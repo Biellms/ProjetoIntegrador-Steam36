@@ -28,12 +28,11 @@
 <hr>
 
 ### **Linguagens e Ferramentas** 🛠
-* Java
-* Eclipse IDE
+* Java (Linguagem)
+* Visual Studio Code (IDE)
 * Drawio (Usado para criar o Fluxograma)
 * Canva (Usado para criar Slides da apresentação)
-* Git
-
+* Git (Controle de Versão)
 
 <hr>
 
