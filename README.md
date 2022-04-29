@@ -1,5 +1,5 @@
 <div align = "center">
-  <img width="750px" src="https://i.imgur.com/ho6bdTa.jpg" title="source: imgur.com"/>
+  <img width="1000px" src="https://i.imgur.com/ho6bdTa.jpg" title="source: imgur.com"/>
   <hr>
   <h3>
   <b>Projeto JAVA - STEAM 36</b></br></div>
@@ -15,8 +15,7 @@
   <br><br>
   <img width="750px" src="https://i.imgur.com/bSXwlNQ.jpg"/></div>
 
-</br>
-<hr>
+#
 
 ### **Resultado** 🖥
 * Interface interativa utilizando JOptionPane.
@@ -25,7 +24,7 @@
 * Carrinho de Compras
 * Método de Pagamento
 
-<hr>
+#
 
 ### **Linguagens e Ferramentas** 🛠
 * Java (Linguagem)
@@ -34,7 +33,7 @@
 * Canva (Usado para criar Slides da apresentação)
 * Git (Controle de Versão)
 
-<hr>
+#
 
 ### **Integrantes**
 
